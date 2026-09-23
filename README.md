@@ -2,16 +2,18 @@
 
 A small, static GitHub Pages site for sharing Beyond All Reason lobby command presets.
 
-The **Tweaks** category is reserved for unit tweaks and tweak-def configurations. Tweak entries appear only under **Tweaks** and are intentionally excluded from **All**, which contains map configurations only.
+The **Tweaks** category is reserved for unit tweaks and tweak-def configurations. Tweak entries appear under both **Tweaks** and **All** and are included in the displayed totals.
 
 ## Add or edit configs
 
 Open `configs.js` and edit the entries in `window.LOBBY_CONFIGS`. Each entry has:
 
 - `title` — the name shown on the card
+- `id` — a unique identifier for this specific mod variant
+- `variant` — distinguishes multiple mods that use the same map name
 - `description` — a short explanation
 - `category` — used to build the filter buttons
-- `image` — a map screenshot path, such as `images/maps/glacial-gap.jpg`
+- `image` — a unique screenshot or animation path; JPG, PNG, WebP, and GIF are supported
 - `skirmish` — the raw debug command used in Skirmish
 - `lobby` — the full `!bset debugcommands` command used in multiplayer lobbies
 
@@ -28,6 +30,18 @@ To use a different filename or format, open `configs.js` and change the config's
    ```
 
 If an assigned image has not been uploaded yet, the card shows the map screenshot placeholder.
+
+## Multiple mods for one map
+
+Give every mod a unique `id`, `variant`, and `image` path even when its `title` is shared. For example, the two Glacial Gap entries use separate IDs and separate screenshot files.
+
+## Tweak animations
+
+Animated GIFs work directly in tweak cards. Upload them with **Upload tweak GIFs** and use a path such as:
+
+```js
+image: "images/tweaks/commander-speed.gif",
+```
 
 Commit and push the change. GitHub Pages will serve the updated site.
 

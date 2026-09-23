@@ -48,10 +48,18 @@ async function copyCommand(button, command, defaultLabel) {
 function renderFilters() {
   filters.replaceChildren();
   categories.forEach((category) => {
+    const categoryCount = category === "All"
+      ? configs.length
+      : configs.filter((config) => config.category === category).length;
     const button = document.createElement("button");
     button.type = "button";
     button.className = `filter-button${category === activeCategory ? " active" : ""}`;
-    button.textContent = category;
+    const label = document.createElement("span");
+    label.textContent = category;
+    const total = document.createElement("span");
+    total.className = "filter-count";
+    total.textContent = categoryCount;
+    button.append(label, total);
     button.setAttribute("aria-pressed", String(category === activeCategory));
     button.addEventListener("click", () => {
       activeCategory = category;
@@ -65,16 +73,16 @@ function renderFilters() {
 function renderConfigs() {
   const query = search.value.trim().toLowerCase();
   const visible = configs.filter((config) => {
-    const matchesCategory = activeCategory === "All"
-      ? config.category !== "Tweaks"
-      : config.category === activeCategory;
-    const haystack = [config.title, config.description, config.category, config.skirmish, config.lobby].join(" ").toLowerCase();
+    const matchesCategory = activeCategory === "All" || config.category === activeCategory;
+    const haystack = [config.id, config.title, config.variant, config.description, config.category, config.skirmish, config.lobby].join(" ").toLowerCase();
     return matchesCategory && haystack.includes(query);
   });
 
   grid.replaceChildren();
   visible.forEach((config) => {
     const fragment = template.content.cloneNode(true);
+    const card = fragment.querySelector(".config-card");
+    card.dataset.configId = config.id;
     fragment.querySelector(".category-pill").textContent = config.category;
     const previewImage = fragment.querySelector(".map-preview img");
     const previewPlaceholder = fragment.querySelector(".map-placeholder");
@@ -88,16 +96,21 @@ function renderConfigs() {
         previewPlaceholder.hidden = false;
       });
       previewImage.src = config.image;
-      previewImage.alt = `${config.title} map screenshot`;
+      previewImage.alt = `${config.title}${config.variant ? ` — ${config.variant}` : ""} screenshot`;
     }
     fragment.querySelector("h3").textContent = config.title;
+    const variantName = fragment.querySelector(".variant-name");
+    if (config.variant) {
+      variantName.textContent = config.variant;
+      variantName.hidden = false;
+    }
     fragment.querySelector(".description").textContent = config.description;
     fragment.querySelector("code").textContent = config.skirmish;
     const skirmishButton = fragment.querySelector(".skirmish-button");
-    skirmishButton.setAttribute("aria-label", `Copy ${config.title} Skirmish command`);
+    skirmishButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} Skirmish command`);
     skirmishButton.addEventListener("click", () => copyCommand(skirmishButton, config.skirmish, "Copy Skirmish"));
     const lobbyButton = fragment.querySelector(".lobby-button");
-    lobbyButton.setAttribute("aria-label", `Copy ${config.title} Lobby command`);
+    lobbyButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} Lobby command`);
     lobbyButton.addEventListener("click", () => copyCommand(lobbyButton, config.lobby, "Copy Lobby"));
     grid.appendChild(fragment);
   });

@@ -11,7 +11,9 @@ window.LOBBY_CATEGORIES = [
 
 window.LOBBY_CONFIGS = [
   {
+    id: "ancient-vault-water-650",
     title: "Ancient Vault",
+    variant: "Water Level 650",
     description: "Water map",
     category: "Water Maps",
     image: "images/maps/ancient-vault.webp",
@@ -19,7 +21,9 @@ window.LOBBY_CONFIGS = [
     lobby: "!bset debugcommands waterlevel 650"
   },
   {
+    id: "ascendancy-naval-lanes",
     title: "Ascendancy",
+    variant: "Naval Lanes",
     description: "Two naval lanes through the middle of the map.",
     category: "Water Maps",
     image: "images/maps/ascendancy.webp",
@@ -27,7 +31,9 @@ window.LOBBY_CONFIGS = [
     lobby: "!bset debugcommands waterlevel 400, extremebelow 200 1.5, minheight 240, extremebelow 400 3.0, floor 300, extremeabove 2000 0.5"
   },
   {
+    id: "carrot-mountains-naval",
     title: "Carrot Mountains",
+    variant: "Naval Conversion",
     description: "Naval battle.",
     category: "Water Maps",
     image: "images/maps/carrot-mountains.webp",
@@ -35,7 +41,9 @@ window.LOBBY_CONFIGS = [
     lobby: "!bset debugcommands extreme 2.5, floor 1280, extremeabove 2000 0.3, waterlevel 1337"
   },
   {
+    id: "flats-and-forests-mountainous",
     title: "Flats and Forests",
+    variant: "Mountainous",
     description: "Becomes more mountains and trees.",
     category: "Large Format",
     image: "images/maps/flats-and-forests.webp",
@@ -43,7 +51,9 @@ window.LOBBY_CONFIGS = [
     lobby: "!bset debugcommands extremeabove 200 4, extremeabove 250 1.5, extremeabove 300 1.8"
   },
   {
+    id: "glacial-gap-inverted",
     title: "Glacial Gap",
+    variant: "Inverted",
     description: "Inverted: a land map with pits instead of mountains.",
     category: "Inverted/Smoothed Maps",
     image: "images/maps/glacial-gap-inverted.webp",
@@ -51,7 +61,9 @@ window.LOBBY_CONFIGS = [
     lobby: "!bset debugcommands invertmap"
   },
   {
+    id: "glacial-gap-amphibious-lanes",
     title: "Glacial Gap",
+    variant: "Amphibious Lanes",
     description: "Land in the middle with flattened top and bottom naval lanes that amphibious units can traverse.",
     category: "Water Maps",
     image: "images/maps/glacial-gap-submerged.webp",
@@ -59,7 +71,9 @@ window.LOBBY_CONFIGS = [
     lobby: "!bset debugcommands waterlevel -1000, extremebelow 2000 3, minheight 1340, extremebelow 4000 2.2, floor 1900, extremeabove 200 0.17, waterlevel 560"
   },
   {
+    id: "koom-valley-central-sea",
     title: "Koom Valley",
+    variant: "Central Sea",
     description: "Central sea with players on either side.",
     category: "Water Maps",
     image: "images/maps/koom-valley.webp",
@@ -67,7 +81,9 @@ window.LOBBY_CONFIGS = [
     lobby: "!bset debugcommands extremebelow 680 0.5, waterlevel 660"
   },
   {
+    id: "metal-plate-water-600",
     title: "Metal Plate",
+    variant: "Water Level 600",
     description: "Water map.",
     category: "Water Maps",
     image: "images/maps/metal-plate.webp",
@@ -75,7 +91,9 @@ window.LOBBY_CONFIGS = [
     lobby: "!bset debugcommands waterlevel 600"
   },
   {
+    id: "rustcrown-canyon-naval-lanes",
     title: "Rustcrown Canyon",
+    variant: "Three Naval Lanes",
     description: "Becomes three naval lanes.",
     category: "Water Maps",
     image: "images/maps/rustcrown-canyon.webp",
