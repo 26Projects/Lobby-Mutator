@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A quick-copy collection of Beyond All Reason lobby configurations."
+    />
+    <meta name="theme-color" content="#071013" />
+    <title>BAR Lobby Configs</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071013'/%3E%3Cpath d='M16 18h21c8 0 13 4 13 11 0 4-2 7-6 9 5 1 8 5 8 10 0 9-7 13-17 13H16V18Zm11 9v8h9c3 0 5-1 5-4s-2-4-5-4h-9Zm0 17v9h10c4 0 6-2 6-5s-2-4-6-4H27Z' fill='%236fe8ff'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grid-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="BAR Lobby Configs home">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <span>LOBBY//CONFIGS</span>
+      </a>
+      <a class="github-link" href="https://github.com/26Projects/Lobby-Mutator" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.3.1 2 1.3 2 1.3 1.1 2 2.9 1.4 3.6 1.1.1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8-.8c2.2-1.5 3.2-1.2 3.2-1.2.6 1.5.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.8 5.4-5.5 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .7Z"/></svg>
+        GitHub
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="eyebrow"><span></span> Beyond All Reason toolkit</div>
+        <h1 id="page-title">Lobby setups.<br /><em>Ready to paste.</em></h1>
+        <p>
+          Pick a setup, copy its command block, and paste it into your BAR lobby chat.
+          Edit <code>configs.js</code> to publish your own.
+        </p>
+        <div class="quick-guide" aria-label="How to use the configs">
+          <span><b>01</b> Find a setup</span>
+          <span><b>02</b> Copy commands</span>
+          <span><b>03</b> Paste in lobby</span>
+        </div>
+      </section>
+
+      <section class="library" aria-labelledby="library-title">
+        <div class="library-heading">
+          <div>
+            <p class="section-kicker">Config library</p>
+            <h2 id="library-title"><span id="config-count">0</span> battle presets</h2>
+          </div>
+          <div class="library-tools">
+            <a class="upload-link" href="https://github.com/26Projects/Lobby-Mutator/upload/main/images/maps" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5"/></svg>
+              Upload screenshots
+            </a>
+            <label class="search-wrap">
+              <span class="sr-only">Search lobby configs</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+              <input id="search" type="search" placeholder="Search configs…" autocomplete="off" />
+              <kbd>/</kbd>
+            </label>
+          </div>
+        </div>
+
+        <div id="filters" class="filters" aria-label="Filter configs by category"></div>
+        <div id="config-grid" class="config-grid" aria-live="polite"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <p>No configs match that search.</p>
+          <button type="button" id="clear-search">Clear search</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Built for the BAR community.</span>
+      <span>Unofficial fan resource · <span id="year"></span></span>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+      <span>Copied to clipboard</span>
+    </div>
+
+    <template id="config-template">
+      <article class="config-card">
+        <div class="card-topline">
+          <span class="category-pill"></span>
+        </div>
+        <div class="map-preview">
+          <img loading="lazy" hidden />
+          <div class="map-placeholder">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17.5 9 12l3.5 3.5L15 13l5 4.5M7.5 8.5h.01M4 5h16v14H4z"/></svg>
+            <span>Map screenshot</span>
+          </div>
+        </div>
+        <h3></h3>
+        <p class="description"></p>
+        <div class="command-block">
+          <pre><code></code></pre>
+        </div>
+        <div class="card-footer">
+          <div class="copy-actions">
+            <button class="copy-button skirmish-button" type="button">
+              <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8zM5 16H4V4h12v1"/></svg>
+              <span>Copy Skirmish</span>
+            </button>
+            <button class="copy-button lobby-button" type="button">
+              <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8zM5 16H4V4h12v1"/></svg>
+              <span>Copy Lobby</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="configs.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

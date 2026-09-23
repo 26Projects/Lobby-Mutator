@@ -1,0 +1,85 @@
+// Imported from https://stanisk223.github.io/
+// Put map screenshots in images/maps and set image to the file path.
+window.LOBBY_CATEGORIES = [
+  "All",
+  "Lava Maps",
+  "Water Maps",
+  "Inverted/Smoothed Maps",
+  "Large Format",
+  "Tweaks"
+];
+
+window.LOBBY_CONFIGS = [
+  {
+    title: "Ancient Vault",
+    description: "Water map",
+    category: "Water Maps",
+    image: "images/maps/ancient-vault.webp",
+    skirmish: "waterlevel 650",
+    lobby: "!bset debugcommands waterlevel 650"
+  },
+  {
+    title: "Ascendancy",
+    description: "Two naval lanes through the middle of the map.",
+    category: "Water Maps",
+    image: "images/maps/ascendancy.webp",
+    skirmish: "waterlevel 400, extremebelow 200 1.5, minheight 240, extremebelow 400 3.0, floor 300, extremeabove 2000 0.5",
+    lobby: "!bset debugcommands waterlevel 400, extremebelow 200 1.5, minheight 240, extremebelow 400 3.0, floor 300, extremeabove 2000 0.5"
+  },
+  {
+    title: "Carrot Mountains",
+    description: "Naval battle.",
+    category: "Water Maps",
+    image: "images/maps/carrot-mountains.webp",
+    skirmish: "extreme 2.5, floor 1280, extremeabove 2000 0.3, waterlevel 1337",
+    lobby: "!bset debugcommands extreme 2.5, floor 1280, extremeabove 2000 0.3, waterlevel 1337"
+  },
+  {
+    title: "Flats and Forests",
+    description: "Becomes more mountains and trees.",
+    category: "Large Format",
+    image: "images/maps/flats-and-forests.webp",
+    skirmish: "extremeabove 200 4, extremeabove 250 1.5, extremeabove 300 1.8",
+    lobby: "!bset debugcommands extremeabove 200 4, extremeabove 250 1.5, extremeabove 300 1.8"
+  },
+  {
+    title: "Glacial Gap",
+    description: "Inverted: a land map with pits instead of mountains.",
+    category: "Inverted/Smoothed Maps",
+    image: "images/maps/glacial-gap-inverted.webp",
+    skirmish: "invertmap",
+    lobby: "!bset debugcommands invertmap"
+  },
+  {
+    title: "Glacial Gap",
+    description: "Land in the middle with flattened top and bottom naval lanes that amphibious units can traverse.",
+    category: "Water Maps",
+    image: "images/maps/glacial-gap-submerged.webp",
+    skirmish: "waterlevel -1000, extremebelow 2000 3, minheight 1340, extremebelow 4000 2.2, floor 1900, extremeabove 200 0.17, waterlevel 560",
+    lobby: "!bset debugcommands waterlevel -1000, extremebelow 2000 3, minheight 1340, extremebelow 4000 2.2, floor 1900, extremeabove 200 0.17, waterlevel 560"
+  },
+  {
+    title: "Koom Valley",
+    description: "Central sea with players on either side.",
+    category: "Water Maps",
+    image: "images/maps/koom-valley.webp",
+    skirmish: "extremebelow 680 0.5, waterlevel 660",
+    lobby: "!bset debugcommands extremebelow 680 0.5, waterlevel 660"
+  },
+  {
+    title: "Metal Plate",
+    description: "Water map.",
+    category: "Water Maps",
+    image: "images/maps/metal-plate.webp",
+    skirmish: "waterlevel 600",
+    lobby: "!bset debugcommands waterlevel 600"
+  },
+  {
+    title: "Rustcrown Canyon",
+    description: "Becomes three naval lanes.",
+    category: "Water Maps",
+    image: "images/maps/rustcrown-canyon.webp",
+    skirmish: "extremeabove 390 0.2, extremeabove 160 -1.2",
+    lobby: "!bset debugcommands extremeabove 390 0.2, extremeabove 160 -1.2"
+  }
+];
