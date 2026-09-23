@@ -65,7 +65,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .github-link:hover { color: var(--cyan); }
 .github-link svg { width: 19px; fill: currentColor; }
 
-.intro { padding: 92px 0 82px; max-width: 860px; }
+.intro { padding: 92px 0 30px; max-width: 860px; }
 .eyebrow, .section-kicker {
   margin: 0 0 20px; color: var(--cyan); font: 500 .78rem/1 var(--mono);
   letter-spacing: .12em; text-transform: uppercase;
@@ -74,14 +74,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .eyebrow span { width: 30px; height: 1px; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
 h1 { margin: 0; font-size: clamp(3.15rem, 8.5vw, 7.3rem); line-height: .91; letter-spacing: -.07em; font-weight: 800; }
 h1 em { color: transparent; -webkit-text-stroke: 1.5px var(--cyan); font-style: normal; }
-.intro > p { max-width: 630px; margin: 33px 0 35px; color: #afc0c5; font-size: 1.08rem; }
+.intro-copy { max-width: 630px; margin: 33px 0 35px; color: #afc0c5; font-size: 1.08rem; }
 code, pre { font-family: var(--mono); }
-.intro code { padding: .12em .38em; color: var(--cyan); background: var(--cyan-soft); border: 1px solid rgba(111,232,255,.18); }
+.intro a { color: var(--cyan); text-underline-offset: .18em; }
+.intro a:hover { color: var(--ink); }
 .quick-guide { display: flex; flex-wrap: wrap; gap: 8px 30px; color: var(--muted); font: 500 .78rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .04em; }
 .quick-guide span { display: inline-flex; gap: 9px; }
 .quick-guide b { color: var(--amber); font-weight: 500; }
+.submit-configs { margin: 18px 0 0; color: var(--muted); font-size: .9rem; }
 
-.library { padding: 52px 0 96px; border-top: 1px solid var(--line); }
+.library { padding: 30px 0 96px; border-top: 1px solid var(--line); }
 .library-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 26px; }
 .section-kicker { margin-bottom: 12px; }
 h2 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.6rem); line-height: 1.1; letter-spacing: -.04em; }
@@ -172,10 +174,10 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px
   .site-header, main, footer { width: min(100% - 28px, 1180px); }
   .site-header { height: 72px; }
   .github-link { font-size: 0; }
-  .intro { padding: 72px 0 65px; }
+  .intro { padding: 72px 0 26px; }
   h1 { font-size: clamp(3.25rem, 16vw, 5.6rem); }
   .quick-guide { gap: 10px 18px; }
-  .library { padding-top: 40px; }
+  .library { padding-top: 26px; }
   .library-heading { align-items: stretch; flex-direction: column; }
   .library-tools { align-items: stretch; flex-direction: column; }
   .upload-link { justify-content: center; }
