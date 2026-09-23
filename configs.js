@@ -26,7 +26,7 @@ window.LOBBY_CONFIGS = [
     variant: "Naval Lanes",
     description: "Two naval lanes through the middle of the map.",
     category: "Water Maps",
-    image: "images/maps/ascendancy.webp",
+    image: "images/maps/ascendancy.png",
     skirmish: "waterlevel 400, extremebelow 200 1.5, minheight 240, extremebelow 400 3.0, floor 300, extremeabove 2000 0.5",
     lobby: "!bset debugcommands waterlevel 400, extremebelow 200 1.5, minheight 240, extremebelow 400 3.0, floor 300, extremeabove 2000 0.5"
   },
