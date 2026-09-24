@@ -17,7 +17,7 @@ window.LOBBY_CONFIGS = [
     description: "Water map",
     category: "Water Maps",
     image: "images/maps/ancient-vault.webp",
-    skirmish: "waterlevel 650",
+    skirmish: "map_waterlevel 650",
     lobby: "!bset map_waterlevel 650"
   },
   {
@@ -27,7 +27,7 @@ window.LOBBY_CONFIGS = [
     description: "Two naval lanes through the middle of the map.",
     category: "Water Maps",
     image: "images/maps/ascendancy.png",
-    skirmish: "waterlevel 400, extremebelow 200 1.5, minheight 240, extremebelow 400 3.0, floor 300, extremeabove 2000 0.5",
+    skirmish: "debugcommands extremebelow 600 1.5, minheight 640, extremebelow 800 3.0, floor 700, extremeabove 2400 0.5\nmap_waterlevel 400",
     lobby: "!bset debugcommands extremebelow 600 1.5, minheight 640, extremebelow 800 3.0, floor 700, extremeabove 2400 0.5\n!bset map_waterlevel 400"
   },
   {
@@ -37,7 +37,7 @@ window.LOBBY_CONFIGS = [
     description: "Naval battle.",
     category: "Water Maps",
     image: "images/maps/carrot-mountains.webp",
-    skirmish: "extreme 2.5, floor 1280, extremeabove 2000 0.3, waterlevel 1337",
+    skirmish: "debugcommands extreme 2.5, floor 1280, extremeabove 2000 0.3\nmap_waterlevel 1337",
     lobby: "!bset debugcommands extreme 2.5, floor 1280, extremeabove 2000 0.3\n!bset map_waterlevel 1337"
   },
   {
@@ -67,7 +67,7 @@ window.LOBBY_CONFIGS = [
     description: "Land in the middle with flattened top and bottom naval lanes that amphibious units can traverse.",
     category: "Water Maps",
     image: "images/maps/glacial-gap-submerged.webp",
-    skirmish: "waterlevel -1000, extremebelow 2000 3, minheight 1340, extremebelow 4000 2.2, floor 1900, extremeabove 200 0.17, waterlevel 560",
+    skirmish: "debugcommands extremebelow 1000 3, minheight 340, extremebelow 3000 2.2, floor 900, extremeabove -800 0.17\nmap_waterlevel -440",
     lobby: "!bset debugcommands extremebelow 1000 3, minheight 340, extremebelow 3000 2.2, floor 900, extremeabove -800 0.17\n!bset map_waterlevel -440"
   },
   {
@@ -77,7 +77,7 @@ window.LOBBY_CONFIGS = [
     description: "Central sea with players on either side.",
     category: "Water Maps",
     image: "images/maps/koom-valley.webp",
-    skirmish: "extremebelow 680 0.5, waterlevel 660",
+    skirmish: "debugcommands extremebelow 680 0.5\nmap_waterlevel 660",
     lobby: "!bset debugcommands extremebelow 680 0.5\n!bset map_waterlevel 660"
   },
   {
@@ -87,7 +87,7 @@ window.LOBBY_CONFIGS = [
     description: "Water map.",
     category: "Water Maps",
     image: "images/maps/metal-plate.webp",
-    skirmish: "waterlevel 600",
+    skirmish: "map_waterlevel 600",
     lobby: "!bset map_waterlevel 600"
   },
   {
