@@ -16,7 +16,7 @@ window.LOBBY_CONFIGS = [
     variant: "Water Level 650",
     description: "Water map",
     category: "Water Maps",
-    image: "images/maps/ancient-vault.webp",
+    image: "images/maps/w1001.png",
     commands: "!bset map_waterlevel 650"
   },
   {
