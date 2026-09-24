@@ -175,6 +175,8 @@ kbd { padding: 1px 7px; border: 1px solid var(--line); color: #71858b; backgroun
   transition: background .2s, color .2s, border-color .2s;
 }
 .copy-button:hover { color: #051114; border-color: var(--cyan); background: var(--cyan); }
+.reset-button { color: var(--amber); border-color: rgba(247, 189, 87, .42); background: rgba(247, 189, 87, .07); }
+.reset-button:hover { color: #120d04; border-color: var(--amber); background: var(--amber); }
 .copy-button:focus-visible, .filter-button:focus-visible, .empty-state button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
 .copy-button svg { width: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .copy-button.copied { color: #061114; border-color: var(--cyan); background: var(--cyan); }
@@ -189,20 +191,21 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px
 .toast.show { transform: translateY(0); opacity: 1; }
 .toast svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
 .image-lightbox {
-  width: auto; max-width: none; height: auto; max-height: none; margin: auto; padding: 0;
-  border: 0; overflow: visible; color: var(--ink); background: transparent;
+  position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; overflow: hidden;
+  width: 100vw; height: 100vh; padding: 0; color: var(--ink); background: rgba(1, 5, 7, .9);
+  backdrop-filter: blur(4px);
 }
-.image-lightbox::backdrop { background: rgba(1, 5, 7, .9); backdrop-filter: blur(4px); }
+.image-lightbox[hidden] { display: none; }
 .image-lightbox-content { position: relative; display: grid; place-items: center; }
 .image-lightbox img {
-  display: block; width: auto; height: auto; max-width: min(94vw, 1800px); max-height: 88vh;
+  display: block; width: auto; height: auto; max-width: min(84vw, 1540px); max-height: 78vh;
   object-fit: contain; border: 1px solid rgba(159, 201, 211, .28); background: #03090b;
   box-shadow: 0 24px 80px rgba(0, 0, 0, .7);
 }
 .image-lightbox-close {
-  position: absolute; z-index: 1; top: -17px; right: -17px; display: grid; place-items: center;
-  width: 42px; height: 42px; padding: 0; border: 1px solid var(--line-bright); border-radius: 50%;
-  color: var(--ink); background: #0b171b; font: 400 1.65rem/1 var(--sans); cursor: pointer;
+  position: absolute; z-index: 1; top: 10px; right: 10px; display: grid; place-items: center;
+  width: 34px; height: 34px; padding: 0; border: 1px solid var(--line-bright); border-radius: 50%;
+  color: var(--ink); background: rgba(5, 14, 17, .88); font: 400 1.35rem/1 var(--sans); cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .45); transition: color .2s, border-color .2s, background .2s;
 }
 .image-lightbox-close:hover { color: #061114; border-color: var(--cyan); background: var(--cyan); }
@@ -228,8 +231,8 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px
   .card-footer { align-items: flex-start; flex-direction: column; }
   .copy-actions { width: 100%; }
   .copy-button { flex: 1; }
-  .image-lightbox img { max-width: 92vw; max-height: 84vh; }
-  .image-lightbox-close { top: -14px; right: -8px; }
+  .image-lightbox img { max-width: 90vw; max-height: 74vh; }
+  .image-lightbox-close { top: 8px; right: 8px; }
   footer { flex-direction: column; }
 }
 

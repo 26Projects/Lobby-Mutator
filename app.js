@@ -9,28 +9,34 @@ const toast = document.querySelector("#toast");
 const imageLightbox = document.querySelector("#image-lightbox");
 const lightboxImage = imageLightbox.querySelector("img");
 const lightboxClose = imageLightbox.querySelector(".image-lightbox-close");
+const lightboxContent = imageLightbox.querySelector(".image-lightbox-content");
 let activeCategory = "All";
 let toastTimer;
+let lightboxTrigger;
+const clearLobbyCommands = `!bset debugcommands ""
+!bset map_waterlevel 0`;
 
 function openImageLightbox(image) {
+  lightboxTrigger = image.closest(".map-preview");
   lightboxImage.src = image.currentSrc || image.src;
   lightboxImage.alt = image.alt;
-  imageLightbox.showModal();
+  imageLightbox.hidden = false;
   document.body.classList.add("lightbox-open");
+  lightboxClose.focus();
 }
 
 function closeImageLightbox() {
-  imageLightbox.close();
+  imageLightbox.hidden = true;
+  document.body.classList.remove("lightbox-open");
+  lightboxImage.removeAttribute("src");
+  lightboxImage.alt = "";
+  lightboxTrigger?.focus();
+  lightboxTrigger = null;
 }
 
 lightboxClose.addEventListener("click", closeImageLightbox);
 imageLightbox.addEventListener("click", (event) => {
-  if (event.target === imageLightbox) closeImageLightbox();
-});
-imageLightbox.addEventListener("close", () => {
-  document.body.classList.remove("lightbox-open");
-  lightboxImage.removeAttribute("src");
-  lightboxImage.alt = "";
+  if (!lightboxContent.contains(event.target)) closeImageLightbox();
 });
 
 const categories = Array.isArray(window.LOBBY_CATEGORIES)
@@ -44,7 +50,7 @@ function showToast(message) {
   toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
 }
 
-async function copyCommand(button, command, defaultLabel) {
+async function copyCommand(button, command, defaultLabel, toastMessage = "Config copied to clipboard") {
   const text = command;
   try {
     await navigator.clipboard.writeText(text);
@@ -62,7 +68,7 @@ async function copyCommand(button, command, defaultLabel) {
   const label = button.querySelector("span");
   label.textContent = "Copied";
   button.classList.add("copied");
-  showToast("Config copied to clipboard");
+  showToast(toastMessage);
   setTimeout(() => {
     label.textContent = defaultLabel;
     button.classList.remove("copied");
@@ -145,6 +151,9 @@ function renderConfigs() {
     fragment.querySelector(".mod-id").textContent = `ID / ${config.id}`;
     fragment.querySelector(".description").textContent = config.description;
     fragment.querySelector(".config-command").textContent = config.commands;
+    const resetButton = fragment.querySelector(".reset-button");
+    resetButton.setAttribute("aria-label", "Copy commands to clear lobby map configuration");
+    resetButton.addEventListener("click", () => copyCommand(resetButton, clearLobbyCommands, "Clear Lobby", "Lobby reset commands copied"));
     const configButton = fragment.querySelector(".config-button");
     configButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} config`);
     configButton.addEventListener("click", () => copyCommand(configButton, config.commands, "Copy Config"));
@@ -164,6 +173,10 @@ document.querySelector("#clear-search").addEventListener("click", () => {
   search.focus();
 });
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !imageLightbox.hidden) {
+    closeImageLightbox();
+    return;
+  }
   if (event.key === "/" && document.activeElement !== search) {
     event.preventDefault();
     search.focus();
