@@ -23,6 +23,7 @@ Number IDs sequentially within their category code:
 - `L` — Large Format
 - `V` — Lava Maps
 - `T` — Tweaks
+- `M` — Mods
 
 ## Add a map screenshot
 

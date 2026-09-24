@@ -6,7 +6,8 @@ window.LOBBY_CATEGORIES = [
   "Water Maps",
   "Inverted/Smoothed Maps",
   "Large Format",
-  "Tweaks"
+  "Tweaks",
+  "Mods"
 ];
 
 window.LOBBY_CONFIGS = [
