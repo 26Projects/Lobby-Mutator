@@ -145,8 +145,14 @@ kbd { padding: 1px 7px; border: 1px solid var(--line); color: #71858b; backgroun
 .config-card h3 { margin: 18px 0 8px; font-size: 1.34rem; line-height: 1.2; letter-spacing: -.025em; }
 .variant-name { margin: -1px 0 8px; color: var(--amber); font: 500 .74rem/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .description { min-height: 50px; margin: 0 0 18px; color: var(--muted); font-size: .9rem; }
-.command-block { min-height: 122px; padding: 15px 16px; overflow: auto; border: 1px solid rgba(151,194,204,.12); background: #061013; }
-.command-block pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; color: #b9d5db; font-size: .78rem; line-height: 1.65; }
+.command-block { overflow: auto; border: 1px solid rgba(151,194,204,.12); background: #061013; }
+.command-entry { padding: 14px 16px 16px; }
+.command-entry + .command-entry { border-top: 1px solid rgba(151,194,204,.12); }
+.command-label {
+  display: block; margin-bottom: 8px; color: var(--amber);
+  font: 600 .66rem/1 var(--mono); letter-spacing: .09em; text-transform: uppercase;
+}
+.command-block pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; color: #b9d5db; font-size: .76rem; line-height: 1.65; }
 .command-block code::first-line { color: var(--cyan); }
 .card-footer { display: flex; justify-content: flex-end; margin-top: 18px; }
 .copy-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }

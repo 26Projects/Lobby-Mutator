@@ -105,7 +105,7 @@ function renderConfigs() {
       variantName.hidden = false;
     }
     fragment.querySelector(".description").textContent = config.description;
-    fragment.querySelector("code").textContent = config.skirmish;
+    fragment.querySelector(".lobby-command").textContent = config.lobby;
     const skirmishButton = fragment.querySelector(".skirmish-button");
     skirmishButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} Skirmish command`);
     skirmishButton.addEventListener("click", () => copyCommand(skirmishButton, config.skirmish, "Copy Skirmish"));
