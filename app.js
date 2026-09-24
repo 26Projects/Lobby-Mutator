@@ -6,8 +6,32 @@ const search = document.querySelector("#search");
 const emptyState = document.querySelector("#empty-state");
 const count = document.querySelector("#config-count");
 const toast = document.querySelector("#toast");
+const imageLightbox = document.querySelector("#image-lightbox");
+const lightboxImage = imageLightbox.querySelector("img");
+const lightboxClose = imageLightbox.querySelector(".image-lightbox-close");
 let activeCategory = "All";
 let toastTimer;
+
+function openImageLightbox(image) {
+  lightboxImage.src = image.currentSrc || image.src;
+  lightboxImage.alt = image.alt;
+  imageLightbox.showModal();
+  document.body.classList.add("lightbox-open");
+}
+
+function closeImageLightbox() {
+  imageLightbox.close();
+}
+
+lightboxClose.addEventListener("click", closeImageLightbox);
+imageLightbox.addEventListener("click", (event) => {
+  if (event.target === imageLightbox) closeImageLightbox();
+});
+imageLightbox.addEventListener("close", () => {
+  document.body.classList.remove("lightbox-open");
+  lightboxImage.removeAttribute("src");
+  lightboxImage.alt = "";
+});
 
 const categories = Array.isArray(window.LOBBY_CATEGORIES)
   ? window.LOBBY_CATEGORIES
@@ -84,12 +108,17 @@ function renderConfigs() {
     const card = fragment.querySelector(".config-card");
     card.dataset.configId = config.id;
     fragment.querySelector(".category-pill").textContent = config.category;
+    const preview = fragment.querySelector(".map-preview");
     const previewImage = fragment.querySelector(".map-preview img");
     const previewPlaceholder = fragment.querySelector(".map-placeholder");
     if (config.image) {
       previewImage.addEventListener("load", () => {
         previewImage.hidden = false;
         previewPlaceholder.hidden = true;
+        preview.classList.add("has-image");
+        preview.tabIndex = 0;
+        preview.setAttribute("role", "button");
+        preview.setAttribute("aria-label", `View full-size ${previewImage.alt}`);
       });
       previewImage.addEventListener("error", () => {
         previewImage.hidden = true;
@@ -97,6 +126,15 @@ function renderConfigs() {
       });
       previewImage.src = config.image;
       previewImage.alt = `${config.title}${config.variant ? ` — ${config.variant}` : ""} screenshot`;
+      preview.addEventListener("click", () => {
+        if (previewImage.complete && previewImage.naturalWidth > 0) openImageLightbox(previewImage);
+      });
+      preview.addEventListener("keydown", (event) => {
+        if ((event.key === "Enter" || event.key === " ") && previewImage.complete && previewImage.naturalWidth > 0) {
+          event.preventDefault();
+          openImageLightbox(previewImage);
+        }
+      });
     }
     fragment.querySelector("h3").textContent = config.title;
     const variantName = fragment.querySelector(".variant-name");
