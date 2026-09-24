@@ -14,7 +14,15 @@ Open `configs.js` and edit the entries in `window.LOBBY_CONFIGS`. Each entry has
 - `description` — a short explanation
 - `category` — used to build the filter buttons
 - `image` — a unique screenshot or animation path; map screenshots use `images/maps/<ID>.png`
-- `commands` — the complete command block to paste into BAR chat in a hosted lobby or offline Skirmish
+- `map` — the stable map-family name used to find the current version in BAR's live map list
+- `commands` — the mutator commands; the site automatically prepends the current versioned `!map` command
+
+The site refreshes map names from BAR's official live metadata at
+`https://maps-metadata.beyondallreason.dev/latest/live_maps.validated.json`. The full
+list is cached in each visitor's browser, and `configs.js` contains a bundled
+last-known mapping for first visits or temporary metadata outages. It never creates
+an unversioned `!map` command. When adding a new map config, add its current exact
+name to `window.BAR_MAP_NAME_FALLBACK` as well as its stable `map` value.
 
 Number IDs sequentially within their category code:
 
