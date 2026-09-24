@@ -9,12 +9,20 @@ The **Tweaks** category is reserved for unit tweaks and tweak-def configurations
 Open `configs.js` and edit the entries in `window.LOBBY_CONFIGS`. Each entry has:
 
 - `title` — the name shown on the card
-- `id` — a unique identifier for this specific mod variant
+- `id` — a unique category code followed by four digits, starting at `1001` (for example, `W1001`)
 - `variant` — distinguishes multiple mods that use the same map name
 - `description` — a short explanation
 - `category` — used to build the filter buttons
 - `image` — a unique screenshot or animation path; JPG, PNG, WebP, and GIF are supported
 - `commands` — the complete command block to paste into BAR chat in a hosted lobby or offline Skirmish
+
+Number IDs sequentially within their category code:
+
+- `W` — Water Maps
+- `I` — Inverted/Smoothed Maps
+- `L` — Large Format
+- `V` — Lava Maps
+- `T` — Tweaks
 
 ## Add a map screenshot
 
