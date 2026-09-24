@@ -43,7 +43,7 @@ window.LOBBY_CONFIGS = [
     variant: "Mountainous",
     description: "Becomes more mountains and trees.",
     category: "Large Format",
-    image: "images/maps/flats-and-forests.webp",
+    image: "images/maps/flats-and-forests.png",
     commands: "!bset debugcommands extremeabove 200 4, extremeabove 250 1.5, extremeabove 300 1.8"
   },
   {
