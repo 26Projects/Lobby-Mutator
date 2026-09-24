@@ -86,6 +86,9 @@ code, pre { font-family: var(--mono); }
 .responsible-note { color: var(--amber); }
 .responsible-note code { color: inherit; font-weight: 600; }
 .responsible-note + span { margin-top: 12px; }
+.map-command-note { display: flex; align-items: flex-start; gap: 7px; margin-top: 12px; max-width: 760px; }
+.map-command-note svg { flex: 0 0 14px; width: 14px; height: 14px; margin-top: 2px; fill: none; stroke: var(--amber); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.map-command-note code { color: var(--amber); font-weight: 600; }
 
 .library { padding: 30px 0 96px; border-top: 1px solid var(--line); }
 .library-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 26px; }
