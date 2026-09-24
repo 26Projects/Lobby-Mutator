@@ -74,7 +74,7 @@ function renderConfigs() {
   const query = search.value.trim().toLowerCase();
   const visible = configs.filter((config) => {
     const matchesCategory = activeCategory === "All" || config.category === activeCategory;
-    const haystack = [config.id, config.title, config.variant, config.description, config.category, config.skirmish, config.lobby].join(" ").toLowerCase();
+    const haystack = [config.id, config.title, config.variant, config.description, config.category, config.commands].join(" ").toLowerCase();
     return matchesCategory && haystack.includes(query);
   });
 
@@ -104,14 +104,12 @@ function renderConfigs() {
       variantName.textContent = config.variant;
       variantName.hidden = false;
     }
+    fragment.querySelector(".mod-id").textContent = `ID / ${config.id}`;
     fragment.querySelector(".description").textContent = config.description;
-    fragment.querySelector(".lobby-command").textContent = config.lobby;
-    const skirmishButton = fragment.querySelector(".skirmish-button");
-    skirmishButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} Skirmish command`);
-    skirmishButton.addEventListener("click", () => copyCommand(skirmishButton, config.skirmish, "Copy Skirmish"));
-    const lobbyButton = fragment.querySelector(".lobby-button");
-    lobbyButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} Lobby command`);
-    lobbyButton.addEventListener("click", () => copyCommand(lobbyButton, config.lobby, "Copy Lobby"));
+    fragment.querySelector(".config-command").textContent = config.commands;
+    const configButton = fragment.querySelector(".config-button");
+    configButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} config`);
+    configButton.addEventListener("click", () => copyCommand(configButton, config.commands, "Copy Config"));
     grid.appendChild(fragment);
   });
 

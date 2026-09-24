@@ -1,6 +1,6 @@
 # BAR Lobby Configs
 
-A small, static GitHub Pages site for sharing Beyond All Reason lobby command presets.
+A small, static GitHub Pages site for sharing current Beyond All Reason command presets. The same command block is used in hosted lobbies and offline Skirmish.
 
 The **Tweaks** category is reserved for unit tweaks and tweak-def configurations. Tweak entries appear under both **Tweaks** and **All** and are included in the displayed totals.
 
@@ -14,8 +14,7 @@ Open `configs.js` and edit the entries in `window.LOBBY_CONFIGS`. Each entry has
 - `description` — a short explanation
 - `category` — used to build the filter buttons
 - `image` — a unique screenshot or animation path; JPG, PNG, WebP, and GIF are supported
-- `skirmish` — the raw debug command used in Skirmish
-- `lobby` — the full `!bset debugcommands` command used in multiplayer lobbies
+- `commands` — the complete command block to paste into BAR chat in a hosted lobby or offline Skirmish
 
 ## Add a map screenshot
 

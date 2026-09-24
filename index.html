@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260924-visible-commands" />
+    <link rel="stylesheet" href="styles.css?v=20260924-mod-id" />
   </head>
   <body>
     <div class="grid-glow" aria-hidden="true"></div>
@@ -38,12 +38,12 @@
     <main id="top">
       <section class="intro" aria-labelledby="page-title">
         <div class="eyebrow"><span></span> Beyond All Reason toolkit</div>
-        <h1 id="page-title">Lobby setups.<br /><em>Ready to paste.</em></h1>
-        <p class="intro-copy">Pick a setup, copy its command block, and paste it into your BAR lobby chat.</p>
+        <h1 id="page-title">BAR setups.<br /><em>Ready to paste.</em></h1>
+        <p class="intro-copy">Pick a setup, copy its command block, and paste it into BAR chat in a hosted lobby or offline Skirmish.</p>
         <div class="quick-guide" aria-label="How to use the configs">
           <span><b>01</b> Find a setup</span>
           <span><b>02</b> Copy commands</span>
-          <span><b>03</b> Paste in lobby</span>
+          <span><b>03</b> Paste in BAR</span>
         </div>
         <p class="submit-configs">
           <span>
@@ -115,31 +115,32 @@
             <span>Map screenshot</span>
           </div>
         </div>
-        <h3></h3>
-        <p class="variant-name" hidden></p>
+        <div class="config-title-row">
+          <div class="config-title-copy">
+            <h3></h3>
+            <p class="variant-name" hidden></p>
+          </div>
+          <span class="mod-id"></span>
+        </div>
         <p class="description"></p>
         <div class="command-block">
           <div class="command-entry">
-            <span class="command-label">Lobby</span>
-            <pre><code class="lobby-command"></code></pre>
+            <span class="command-label">Command</span>
+            <pre><code class="config-command"></code></pre>
           </div>
         </div>
         <div class="card-footer">
           <div class="copy-actions">
-            <button class="copy-button skirmish-button" type="button">
+            <button class="copy-button config-button" type="button">
               <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8zM5 16H4V4h12v1"/></svg>
-              <span>Copy Skirmish</span>
-            </button>
-            <button class="copy-button lobby-button" type="button">
-              <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8zM5 16H4V4h12v1"/></svg>
-              <span>Copy Lobby</span>
+              <span>Copy Config</span>
             </button>
           </div>
         </div>
       </article>
     </template>
 
-    <script src="configs.js?v=20260924-skirmish-waterlevel"></script>
-    <script src="app.js?v=20260924-visible-commands"></script>
+    <script src="configs.js?v=20260924-single-format"></script>
+    <script src="app.js?v=20260924-mod-id"></script>
   </body>
 </html>
