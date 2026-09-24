@@ -13,6 +13,7 @@ window.LOBBY_CATEGORIES = [
 // Last-known current names from BAR's live map metadata. app.js refreshes these
 // automatically and caches the full live list in the visitor's browser.
 window.BAR_MAP_NAME_FALLBACK = {
+  "All That Smolders": "All That Smolders v1.2",
   "Ancient Vault": "Ancient Vault v1.4",
   "Ascendancy": "Ascendancy v2.2",
   "Carrot Mountains": "Carrot Mountains v2.0",
@@ -145,5 +146,15 @@ window.LOBBY_CONFIGS = [
     image: "images/maps/C1012.png",
     map: "Rustcrown Canyon",
     commands: "!bset debugcommands extremeabove 390 0.2, extremeabove 160 -1.2"
+  },
+  {
+    id: "C1013",
+    title: "All That Smolders",
+    variant: "Inverted Waterways",
+    description: "Central plain bound by two waterways with a protected plateau in the rear.",
+    categories: ["Water Maps", "Inverted/Smoothed Maps"],
+    image: "images/maps/C1013.png",
+    map: "All That Smolders",
+    commands: "!bset debugcommands invertmap\n!bset map_waterlevel 283"
   }
 ];
