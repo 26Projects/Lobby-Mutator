@@ -18,7 +18,7 @@ window.LOBBY_CONFIGS = [
     description: "Water map",
     category: "Water Maps",
     image: "images/maps/W1001.png",
-    commands: "!bset map_waterlevel 650"
+    commands: "!map Ancient Vault\n!bset map_waterlevel 650"
   },
   {
     id: "W1002",
@@ -26,8 +26,8 @@ window.LOBBY_CONFIGS = [
     variant: "Naval Lanes",
     description: "Two naval lanes through the middle of the map.",
     category: "Water Maps",
-    image: "images/maps/ascendancy.png",
-    commands: "!bset debugcommands extremebelow 600 1.5, minheight 640, extremebelow 800 3.0, floor 700, extremeabove 2400 0.5\n!bset map_waterlevel 400"
+    image: "images/maps/W1002.png",
+    commands: "!map Ascendancy\n!bset debugcommands extremebelow 600 1.5, minheight 640, extremebelow 800 3.0, floor 700, extremeabove 2400 0.5\n!bset map_waterlevel 400"
   },
   {
     id: "W1003",
@@ -35,8 +35,8 @@ window.LOBBY_CONFIGS = [
     variant: "Naval Conversion",
     description: "Naval battle.",
     category: "Water Maps",
-    image: "images/maps/carrot-mountains.webp",
-    commands: "!bset debugcommands extreme 2.5, floor 1280, extremeabove 2000 0.3\n!bset map_waterlevel 1337"
+    image: "images/maps/W1003.png",
+    commands: "!map Carrot Mountains\n!bset debugcommands extreme 2.5, floor 1280, extremeabove 2000 0.3\n!bset map_waterlevel 1337"
   },
   {
     id: "L1001",
@@ -44,8 +44,8 @@ window.LOBBY_CONFIGS = [
     variant: "Mountainous",
     description: "Becomes more mountains and trees.",
     category: "Large Format",
-    image: "images/maps/flats-and-forests.png",
-    commands: "!bset debugcommands extremeabove 200 4, extremeabove 250 1.5, extremeabove 300 1.8"
+    image: "images/maps/L1001.png",
+    commands: "!map Flats and Forests\n!bset debugcommands extremeabove 200 4, extremeabove 250 1.5, extremeabove 300 1.8"
   },
   {
     id: "I1001",
@@ -53,8 +53,8 @@ window.LOBBY_CONFIGS = [
     variant: "Inverted",
     description: "Inverted: a land map with pits instead of mountains.",
     category: "Inverted/Smoothed Maps",
-    image: "images/maps/glacial-gap-inverted.webp",
-    commands: "!bset debugcommands invertmap"
+    image: "images/maps/I1001.png",
+    commands: "!map Glacial Gap\n!bset debugcommands invertmap"
   },
   {
     id: "W1004",
@@ -62,8 +62,8 @@ window.LOBBY_CONFIGS = [
     variant: "Amphibious Lanes",
     description: "Land in the middle with flattened top and bottom naval lanes that amphibious units can traverse.",
     category: "Water Maps",
-    image: "images/maps/glacial-gap-submerged.webp",
-    commands: "!bset debugcommands extremebelow 1000 3, minheight 340, extremebelow 3000 2.2, floor 900, extremeabove -800 0.17\n!bset map_waterlevel -440"
+    image: "images/maps/W1004.png",
+    commands: "!map Glacial Gap\n!bset debugcommands extremebelow 1000 3, minheight 340, extremebelow 3000 2.2, floor 900, extremeabove -800 0.17\n!bset map_waterlevel -440"
   },
   {
     id: "W1005",
@@ -71,8 +71,8 @@ window.LOBBY_CONFIGS = [
     variant: "Central Sea",
     description: "Central sea with players on either side.",
     category: "Water Maps",
-    image: "images/maps/koom-valley.webp",
-    commands: "!bset debugcommands extremebelow 680 0.5\n!bset map_waterlevel 660"
+    image: "images/maps/W1005.png",
+    commands: "!map Koom Valley\n!bset debugcommands extremebelow 680 0.5\n!bset map_waterlevel 660"
   },
   {
     id: "W1006",
@@ -80,8 +80,8 @@ window.LOBBY_CONFIGS = [
     variant: "Water Level 600",
     description: "Water map.",
     category: "Water Maps",
-    image: "images/maps/metal-plate.webp",
-    commands: "!bset map_waterlevel 600"
+    image: "images/maps/W1006.png",
+    commands: "!map Metal Plate\n!bset map_waterlevel 600"
   },
   {
     id: "W1007",
@@ -89,7 +89,7 @@ window.LOBBY_CONFIGS = [
     variant: "Three Naval Lanes",
     description: "Becomes three naval lanes.",
     category: "Water Maps",
-    image: "images/maps/rustcrown-canyon.webp",
-    commands: "!bset debugcommands extremeabove 390 0.2, extremeabove 160 -1.2"
+    image: "images/maps/W1007.png",
+    commands: "!map Rustcrown Canyon\n!bset debugcommands extremeabove 390 0.2, extremeabove 160 -1.2"
   }
 ];

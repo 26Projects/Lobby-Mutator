@@ -13,7 +13,7 @@ Open `configs.js` and edit the entries in `window.LOBBY_CONFIGS`. Each entry has
 - `variant` — distinguishes multiple mods that use the same map name
 - `description` — a short explanation
 - `category` — used to build the filter buttons
-- `image` — a unique screenshot or animation path; JPG, PNG, WebP, and GIF are supported
+- `image` — a unique screenshot or animation path; map screenshots use `images/maps/<ID>.png`
 - `commands` — the complete command block to paste into BAR chat in a hosted lobby or offline Skirmish
 
 Number IDs sequentially within their category code:
@@ -28,13 +28,13 @@ Number IDs sequentially within their category code:
 ## Add a map screenshot
 
 1. Click **Upload screenshots** on the site. It opens the repository's `images/maps` upload page.
-2. Name the screenshot to match the path already assigned in `configs.js`, such as `ancient-vault.webp`.
+2. Name the screenshot after the config ID using an uppercase ID and lowercase extension, such as `W1001.png`.
 3. Upload and commit the image on GitHub. The matching card will display it automatically.
 
-To use a different filename or format, open `configs.js` and change the config's `image` value:
+For map cards, keep the filename and `image` value standardized as `images/maps/<ID>.png`:
 
    ```js
-   image: "images/maps/glacial-gap.webp",
+   image: "images/maps/I1001.png",
    ```
 
 If an assigned image has not been uploaded yet, the card shows the map screenshot placeholder.
