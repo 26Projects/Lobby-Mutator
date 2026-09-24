@@ -21,10 +21,21 @@ window.BAR_MAP_NAME_FALLBACK = {
   "Koom Valley 3": "Koom Valley 3 3.1",
   "Full Metal Plate": "Full Metal Plate 1.7",
   "Rustcrown Canyon": "Rustcrown Canyon 1.3",
-  "Supreme Isthmus": "Supreme Isthmus v2.1"
+  "Supreme Isthmus": "Supreme Isthmus v2.1",
+  "Tempest": "Tempest_V3"
 };
 
 window.LOBBY_CONFIGS = [
+  {
+    id: "V1001",
+    title: "Tempest",
+    variant: "Central Lava Crater",
+    description: "Tempest with a central lava crater for separation.",
+    category: "Lava Maps",
+    image: "images/maps/V1001.png",
+    map: "Tempest",
+    commands: "!bset map_waterlevel -183\n!bset map_waterislava 1\n!bset map_lavatiderhythm disabled\n!bset map_tweaklava 0"
+  },
   {
     id: "W1001",
     title: "Ancient Vault",
