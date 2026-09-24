@@ -113,9 +113,14 @@ imageLightbox.addEventListener("click", (event) => {
   if (!lightboxContent.contains(event.target)) closeImageLightbox();
 });
 
+function getConfigCategories(config) {
+  if (Array.isArray(config.categories)) return config.categories;
+  return config.category ? [config.category] : [];
+}
+
 const categories = Array.isArray(window.LOBBY_CATEGORIES)
   ? window.LOBBY_CATEGORIES
-  : ["All", ...new Set(configs.map((config) => config.category))];
+  : ["All", ...new Set(configs.flatMap(getConfigCategories))];
 
 function showToast(message) {
   toast.querySelector("span").textContent = message;
@@ -154,7 +159,7 @@ function renderFilters() {
   categories.forEach((category) => {
     const categoryCount = category === "All"
       ? configs.length
-      : configs.filter((config) => config.category === category).length;
+      : configs.filter((config) => getConfigCategories(config).includes(category)).length;
     const button = document.createElement("button");
     button.type = "button";
     button.className = `filter-button${category === activeCategory ? " active" : ""}`;
@@ -177,8 +182,9 @@ function renderFilters() {
 function renderConfigs() {
   const query = search.value.trim().toLowerCase();
   const visible = configs.filter((config) => {
-    const matchesCategory = activeCategory === "All" || config.category === activeCategory;
-    const haystack = [config.id, config.title, config.variant, config.description, config.category, config.map, getConfigCommands(config), config.commands].join(" ").toLowerCase();
+    const configCategories = getConfigCategories(config);
+    const matchesCategory = activeCategory === "All" || configCategories.includes(activeCategory);
+    const haystack = [config.id, config.title, config.variant, config.description, ...configCategories, config.map, getConfigCommands(config), config.commands].join(" ").toLowerCase();
     return matchesCategory && haystack.includes(query);
   });
 
@@ -188,7 +194,7 @@ function renderConfigs() {
     const fragment = template.content.cloneNode(true);
     const card = fragment.querySelector(".config-card");
     card.dataset.configId = config.id;
-    fragment.querySelector(".category-pill").textContent = config.category;
+    fragment.querySelector(".category-pill").textContent = getConfigCategories(config).join(" / ");
     const preview = fragment.querySelector(".map-preview");
     const previewImage = fragment.querySelector(".map-preview img");
     const previewPlaceholder = fragment.querySelector(".map-placeholder");
