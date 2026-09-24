@@ -141,6 +141,7 @@ kbd { padding: 1px 7px; border: 1px solid var(--line); color: #71858b; backgroun
     linear-gradient(90deg, rgba(111,232,255,.03) 1px, transparent 1px);
   background-size: 24px 24px; font: 500 .72rem/1 var(--mono); letter-spacing: .05em; text-transform: uppercase;
 }
+.map-placeholder[hidden] { display: none; }
 .map-placeholder svg { width: 29px; fill: none; stroke: #66858d; stroke-width: 1.25; }
 .config-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-top: 18px; }
 .config-title-copy { min-width: 0; }
