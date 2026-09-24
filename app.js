@@ -17,6 +17,14 @@ const liveMapsUrl = "https://maps-metadata.beyondallreason.dev/latest/live_maps.
 const liveMapsCacheKey = "bar-live-map-names-v1";
 const resolvedMapNames = new Map(Object.entries(window.BAR_MAP_NAME_FALLBACK || {}));
 const clearLobbyCommands = `!bset debugcommands 0
+!bset map_waterislava 0
+!bset map_lavatiderhythm default
+!bset map_lavatidemode lavastartlow
+!bset map_lavahighlevel 0
+!bset map_lavahighdwell 60
+!bset map_lavalowlevel 0
+!bset map_lavalowdwell 300
+!bset map_tweaklava 0
 !bset map_waterlevel 0`;
 
 function normalizeMapName(value) {

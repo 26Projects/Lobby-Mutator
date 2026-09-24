@@ -20,7 +20,8 @@ window.BAR_MAP_NAME_FALLBACK = {
   "Glacial Gap": "Glacial Gap v1.1",
   "Koom Valley 3": "Koom Valley 3 3.1",
   "Full Metal Plate": "Full Metal Plate 1.7",
-  "Rustcrown Canyon": "Rustcrown Canyon 1.3"
+  "Rustcrown Canyon": "Rustcrown Canyon 1.3",
+  "Supreme Isthmus": "Supreme Isthmus v2.1"
 };
 
 window.LOBBY_CONFIGS = [
@@ -63,6 +64,16 @@ window.LOBBY_CONFIGS = [
     image: "images/maps/L1001.png",
     map: "Flats and Forests",
     commands: "!bset debugcommands extremeabove 200 4, extremeabove 250 1.5, extremeabove 300 1.8"
+  },
+  {
+    id: "L1002",
+    title: "Supreme Isthmus",
+    variant: "Falling Lava Tides",
+    description: "Open lava map with tides falling away to expose mountains after 10 minutes. Lava does not rise.",
+    category: "Large Format",
+    image: "images/maps/L1002.png",
+    map: "Supreme Isthmus",
+    commands: "!bset map_waterlevel -104\n!bset map_waterislava 1\n!bset map_lavatiderhythm enabled\n!bset map_lavatidemode lavastarthigh\n!bset map_lavahighlevel 20\n!bset map_lavahighdwell 600\n!bset map_lavalowlevel 0\n!bset map_lavalowdwell 30000\n!bset map_tweaklava 0"
   },
   {
     id: "I1001",
