@@ -177,6 +177,7 @@ kbd { padding: 1px 7px; border: 1px solid var(--line); color: #71858b; backgroun
   background: var(--cyan-soft); font: 600 .78rem/1 var(--mono); cursor: pointer;
   transition: background .2s, color .2s, border-color .2s;
 }
+.copy-button[hidden] { display: none; }
 .copy-button:hover { color: #051114; border-color: var(--cyan); background: var(--cyan); }
 .reset-button { color: var(--amber); border-color: rgba(247, 189, 87, .42); background: rgba(247, 189, 87, .07); }
 .reset-button:hover { color: #120d04; border-color: var(--amber); background: var(--amber); }
