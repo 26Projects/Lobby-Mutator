@@ -184,7 +184,7 @@ function renderConfigs() {
   const visible = configs.filter((config) => {
     const configCategories = getConfigCategories(config);
     const matchesCategory = activeCategory === "All" || configCategories.includes(activeCategory);
-    const haystack = [config.id, config.title, config.variant, config.description, config.creator, ...configCategories, config.map, getConfigCommands(config), config.commands].join(" ").toLowerCase();
+    const haystack = [config.id, config.title, config.variant, config.description, config.creator, ...configCategories, config.map, getConfigCommands(config), config.commands, config.startBoxes].join(" ").toLowerCase();
     return matchesCategory && haystack.includes(query);
   });
 
@@ -233,6 +233,16 @@ function renderConfigs() {
     fragment.querySelector(".description").textContent = config.description;
     fragment.querySelector(".creator-name").textContent = config.creator || "";
     fragment.querySelector(".config-command").textContent = fullCommands || "Current map version unavailable. Connect once to refresh the BAR map list.";
+    const startBoxes = typeof config.startBoxes === "string" ? config.startBoxes.trim() : "";
+    const startBoxEntry = fragment.querySelector(".start-box-entry");
+    const startBoxButton = fragment.querySelector(".start-box-button");
+    if (startBoxes) {
+      fragment.querySelector(".start-box-command").textContent = startBoxes;
+      startBoxEntry.hidden = false;
+      startBoxButton.hidden = false;
+      startBoxButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} custom start boxes`);
+      startBoxButton.addEventListener("click", () => copyCommand(startBoxButton, startBoxes, "Copy Start Boxes", "Start boxes copied to clipboard"));
+    }
     const resetButton = fragment.querySelector(".reset-button");
     resetButton.setAttribute("aria-label", "Copy commands to clear lobby map configuration");
     resetButton.addEventListener("click", () => copyCommand(resetButton, clearLobbyCommands, "Clear Lobby", "Lobby reset commands copied"));

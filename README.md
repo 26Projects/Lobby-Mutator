@@ -22,6 +22,7 @@ See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the copy-and-paste template and s
 - `M####` identifies mods.
 - An entry can belong to multiple categories without changing its ID.
 - Every entry includes a visible creator credit.
+- Configs can optionally include a separate Base64 `startBoxes` command; its box and copy button appear only when provided.
 - Map screenshots use `images/maps/<ID>.png`.
 - Tweak animations can use GIF files under `images/tweaks`.
 

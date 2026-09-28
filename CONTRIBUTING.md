@@ -22,7 +22,8 @@ Copy this template and replace every value:
     categories: ["Water Maps"],
     image: "images/maps/C####.png",
     map: "Map name without its version number",
-    commands: "!bset first_option value\n!bset second_option value"
+    commands: "!bset first_option value\n!bset second_option value",
+    startBoxes: "!bset mapmetadata_startbox_override <base64 value>"
   },
 ```
 
@@ -31,6 +32,8 @@ Keep these details in mind:
 - Replace `C####` with the next unused `C` number in `configs.js`.
 - Keep the comma after the entry unless it is the final entry.
 - Put each command on its own line by using `\n` inside `commands`.
+- `startBoxes` is optional. Remove that line when the config does not use custom start boxes.
+- Keep the entire `!bset mapmetadata_startbox_override` command and its Base64 value together inside `startBoxes`.
 - You may assign more than one category, such as `["Lava Maps", "Large Format"]`.
 - Available categories are `Lava Maps`, `Water Maps`, `Inverted/Smoothed Maps`, `Large Format`, `Tweaks`, and `Mods`.
 - Use a unique `variant` when the map already has another config.
