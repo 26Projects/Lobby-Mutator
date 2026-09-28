@@ -1,10 +1,12 @@
 # Example: Add Ancient Vault central lava pool
 
-This is an example of a completed pull request description. Do not copy its ID for a real submission.
+This is an example of a completed **Map Config** pull request description. Do not copy its ID for a real submission. Unit/Tweak and Mod submissions use their matching templates from `CONTRIBUTING.md`.
 
 ## Config submission
 
-**Map:** Ancient Vault
+**Config type (Map / Unit-Tweak / Mod):** Map
+
+**Map, unit, tweak, or mod name:** Ancient Vault
 
 **Config ID:** C9999 (example only)
 
@@ -19,8 +21,10 @@ Creates a central lava pool for island hopping, with the north and south connect
 ## Checklist
 
 - [x] I added the config to `configs.js`.
-- [x] I used the next available ID.
-- [x] I uploaded `images/maps/C9999.png` using the same capitalization as the ID.
+- [x] I used the page's config-type counter to choose the next available ID and confirmed it is unused in `configs.js`.
+- [x] I uploaded the matching image to `images/maps`, and its filename exactly matches the config ID and `image` value.
+- [x] I completed the map screenshot steps (`/cheat`, `/globallos`, then `F5`).
+- [x] This config does not use custom starting areas.
 - [x] I tested every `!bset` command in BAR.
 - [x] I selected every category where the config belongs.
 - [x] I added the creator credit I want displayed on the card.

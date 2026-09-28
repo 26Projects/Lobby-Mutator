@@ -1,6 +1,8 @@
 ## Config submission
 
-**Map:**
+**Config type (Map / Unit-Tweak / Mod):**
+
+**Map, unit, tweak, or mod name:**
 
 **Config ID:**
 
@@ -10,15 +12,15 @@
 
 **What does this config change?**
 
-<!-- Briefly explain how the map plays with this config. -->
+<!-- Briefly explain how the map, unit, tweak, or mod behaves with this config. -->
 
 ## Checklist
 
 - [ ] I added the config to `configs.js`.
 - [ ] I used the page's config-type counter to choose the next available ID and confirmed it is unused in `configs.js`.
-- [ ] I uploaded `images/maps/<ID>.png` using the same capitalization as the ID.
-- [ ] I ran `/cheat` and `/globallos`, then pressed `F5` to hide the UI before taking the screenshot.
-- [ ] If this config uses custom starting areas, I clearly labeled every starting location in the screenshot.
+- [ ] I uploaded the matching image to `images/maps`, `images/tweaks`, or `images/mods`, and its filename exactly matches the config ID and `image` value.
+- [ ] I completed the map screenshot steps (`/cheat`, `/globallos`, then `F5`), or this is not a map config.
+- [ ] I clearly labeled custom starting areas in the screenshot, or this config does not use them.
 - [ ] I tested every `!bset` command in BAR.
 - [ ] I selected every category where the config belongs.
 - [ ] I added the creator credit I want displayed on the card.
