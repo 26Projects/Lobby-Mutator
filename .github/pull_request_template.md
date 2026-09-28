@@ -15,7 +15,7 @@
 ## Checklist
 
 - [ ] I added the config to `configs.js`.
-- [ ] I used the next available ID.
+- [ ] I used the page's config-type counter to choose the next available ID and confirmed it is unused in `configs.js`.
 - [ ] I uploaded `images/maps/<ID>.png` using the same capitalization as the ID.
 - [ ] I ran `/cheat` and `/globallos`, then pressed `F5` to hide the UI before taking the screenshot.
 - [ ] If this config uses custom starting areas, I clearly labeled every starting location in the screenshot.
