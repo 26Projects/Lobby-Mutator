@@ -35,7 +35,7 @@ Keep these details in mind:
 - `startBoxes` is optional. Remove that line when the config does not use custom start boxes.
 - Keep the entire `!bset mapmetadata_startbox_override` command and its Base64 value together inside `startBoxes`.
 - You may assign more than one category, such as `["Lava Maps", "Large Format"]`.
-- Available categories are `Lava Maps`, `Water Maps`, `Inverted/Smoothed Maps`, `Large Format`, `Tweaks`, and `Mods`.
+- Available categories are `Lava Maps`, `Water Maps`, `Drained Maps`, `Inverted/Smoothed Maps`, `Large Format`, `Tweaks`, and `Mods`.
 - Use a unique `variant` when the map already has another config.
 - Use `creator` to credit the person who designed or submitted the config.
 

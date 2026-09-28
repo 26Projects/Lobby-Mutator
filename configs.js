@@ -3,6 +3,7 @@ window.LOBBY_CATEGORIES = [
   "All",
   "Lava Maps",
   "Water Maps",
+  "Drained Maps",
   "Inverted/Smoothed Maps",
   "Large Format",
   "Tweaks",
@@ -22,7 +23,8 @@ window.BAR_MAP_NAME_FALLBACK = {
   "Full Metal Plate": "Full Metal Plate 1.7",
   "Rustcrown Canyon": "Rustcrown Canyon 1.3",
   "Supreme Isthmus": "Supreme Isthmus v2.1",
-  "Tempest": "Tempest_V3"
+  "Tempest": "Tempest_V3",
+  "Tropical Assault": "Tropical Assault v3.0"
 };
 
 window.LOBBY_CONFIGS = [
@@ -168,5 +170,17 @@ window.LOBBY_CONFIGS = [
     image: "images/maps/C1013.png",
     map: "All That Smolders",
     commands: "!bset debugcommands invertmap\n!bset map_waterlevel 283"
+  },
+  {
+    id: "C1014",
+    title: "Tropical Assault",
+    variant: "Water Level -100",
+    description: "Waterless map with custom start boxes.",
+    creator: "26Projects",
+    categories: ["Drained Maps"],
+    image: "images/maps/C1014.png",
+    map: "Tropical Assault",
+    commands: "!bset map_waterlevel -100",
+    startBoxes: "!bset mapmetadata_startbox_override eJx1kj1uwzAMhe-iOYP4K8lXKTKkQLcCKZoMCQLfvagl0RGjbH6fTfo9ko9wuZ5-r5_n29clLB-P8HP-vm8Pt7BoPIR7WOJ62GSiUeImkZvO9TWlplU2LdA0l02rjLrkUQP2BsIVWMcEFWi3oNpA79EcQzITrWmWEWCM41-eQM0BYkZrUGBz2nyw-ZhrS8I8B0VHnfusZCYTNok8aq6pbQqU6-Spl8O4Ca0JGcepoazHf_J8AoBpWDrwXGNxgDxgMlAcEPGgBuA-LmiLlt4UY5yDZMb0DQCMrmZCaK9KL6RvXy2QtIvpAwUqb0n2JJEnxZP9OPs-Xglkmxah7wztGzU_0m6UwJNIjhRflH2NqjNDe4K6SszeblqP63H9A1U2JPc"
   }
 ];
