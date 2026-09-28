@@ -91,6 +91,9 @@ code, pre { font-family: var(--mono); }
 .section-kicker { margin-bottom: 12px; }
 h2 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.6rem); line-height: 1.1; letter-spacing: -.04em; }
 h2 span { color: var(--cyan); }
+.config-counts { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.config-count-item { color: var(--ink); white-space: nowrap; font-size: clamp(1.05rem, 2.25vw, 1.55rem); letter-spacing: -.025em; }
+.config-count-item strong { color: var(--cyan); font-size: 1.35em; }
 .library-tools { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
 .upload-link {
   min-height: 48px; display: inline-flex; align-items: center; gap: 8px; padding: 0 14px;

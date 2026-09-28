@@ -18,7 +18,7 @@ See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the copy-and-paste template and s
 ## Library structure
 
 - `C####` identifies map configs.
-- `T####` identifies tweaks.
+- `T####` identifies unit and tweak configs.
 - `M####` identifies mods.
 - An entry can belong to multiple categories without changing its ID.
 - Every entry includes a visible creator credit.

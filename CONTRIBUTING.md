@@ -27,9 +27,18 @@ Copy this template and replace every value:
   },
 ```
 
-Keep these details in mind:
+### Choose the next ID
 
-- Replace `C####` with the next unused `C` number in `configs.js`.
+The library page displays separate totals for **Map Configs**, **Unit Configs**, and **Mod Configs**. Use the total beside your config type to calculate the next ID:
+
+- Map configs use `C####`.
+- Unit and tweak configs use `T####`.
+- Mod configs use `M####`.
+- Add the displayed total to `1001`. For example, if the page shows **12 Map Configs**, the next map ID is `C1013`.
+- Confirm that the calculated ID is not already present in `configs.js` before using it.
+
+Keep these additional details in mind:
+
 - Keep the comma after the entry unless it is the final entry.
 - Put each command on its own line by using `\n` inside `commands`.
 - `startBoxes` is optional. Remove that line when the config does not use custom start boxes.

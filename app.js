@@ -4,7 +4,11 @@ const template = document.querySelector("#config-template");
 const filters = document.querySelector("#filters");
 const search = document.querySelector("#search");
 const emptyState = document.querySelector("#empty-state");
-const count = document.querySelector("#config-count");
+const configCountElements = {
+  C: document.querySelector("#map-config-count"),
+  T: document.querySelector("#unit-config-count"),
+  M: document.querySelector("#mod-config-count"),
+};
 const toast = document.querySelector("#toast");
 const imageLightbox = document.querySelector("#image-lightbox");
 const lightboxImage = imageLightbox.querySelector("img");
@@ -27,6 +31,18 @@ const clearLobbyCommands = `!bset debugcommands 0
 !bset map_lavalowdwell 300
 !bset map_tweaklava 0
 !bset map_waterlevel 0`;
+
+function renderConfigCounts() {
+  const totals = { C: 0, T: 0, M: 0 };
+  configs.forEach((config) => {
+    const prefix = String(config.id || "").charAt(0).toUpperCase();
+    if (Object.hasOwn(totals, prefix)) totals[prefix] += 1;
+  });
+
+  Object.entries(configCountElements).forEach(([prefix, element]) => {
+    element.textContent = totals[prefix];
+  });
+}
 
 function normalizeMapName(value) {
   return String(value || "")
@@ -256,7 +272,6 @@ function renderConfigs() {
     grid.appendChild(fragment);
   });
 
-  count.textContent = visible.length;
   emptyState.hidden = visible.length !== 0;
 }
 
@@ -285,6 +300,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+renderConfigCounts();
 renderFilters();
 renderConfigs();
 refreshLiveMapNames();
