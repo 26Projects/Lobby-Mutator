@@ -17,6 +17,7 @@ window.BAR_MAP_NAME_FALLBACK = {
   "Ancient Vault": "Ancient Vault v1.4",
   "Ascendancy": "Ascendancy v2.2",
   "Carrot Mountains": "Carrot Mountains v2.0",
+  "Eight Horses": "Eight Horses 1.2",
   "Flats and Forests": "Flats and Forests v2.2",
   "Glacial Gap": "Glacial Gap v1.1",
   "Koom Valley 3": "Koom Valley 3 3.1",
@@ -182,5 +183,16 @@ window.LOBBY_CONFIGS = [
     map: "Tropical Assault",
     commands: "!bset map_waterlevel -100",
     startBoxes: "!bset mapmetadata_startbox_override eJx1kj1uwzAMhe-iOYP4K8lXKTKkQLcCKZoMCQLfvagl0RGjbH6fTfo9ko9wuZ5-r5_n29clLB-P8HP-vm8Pt7BoPIR7WOJ62GSiUeImkZvO9TWlplU2LdA0l02rjLrkUQP2BsIVWMcEFWi3oNpA79EcQzITrWmWEWCM41-eQM0BYkZrUGBz2nyw-ZhrS8I8B0VHnfusZCYTNok8aq6pbQqU6-Spl8O4Ca0JGcepoazHf_J8AoBpWDrwXGNxgDxgMlAcEPGgBuA-LmiLlt4UY5yDZMb0DQCMrmZCaK9KL6RvXy2QtIvpAwUqb0n2JJEnxZP9OPs-Xglkmxah7wztGzU_0m6UwJNIjhRflH2NqjNDe4K6SszeblqP63H9A1U2JPc"
+  },
+  {
+    id: "C1015",
+    title: "Eight Horses",
+    variant: "Smoothed River Floor",
+    description: "Smoothed and elevated terrain improves vehicle pathing on the river floor while maintaining minor terrain deviations in key defensive areas.",
+    creator: "26Projects",
+    categories: ["Drained Maps", "Inverted/Smoothed Maps"],
+    image: "images/maps/C1015.png",
+    map: "Eight Horses",
+    commands: "!bset debugcommands floor 3\n!bset map_waterlevel -150"
   }
 ];

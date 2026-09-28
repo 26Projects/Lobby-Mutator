@@ -50,6 +50,8 @@ Commit the edit to your fork.
 
 The filename is case-sensitive. `C1014.png` works; `c1014.PNG` does not.
 
+If the config includes custom starting areas, clearly label every starting location in the screenshot so players can understand the layout before copying it.
+
 ## 4. Open the pull request
 
 Open a pull request from your fork to this repository's `main` branch. GitHub will automatically provide a short submission form. Fill it out and submit the PR.
