@@ -25,6 +25,7 @@ window.BAR_MAP_NAME_FALLBACK = {
   "Rustcrown Canyon": "Rustcrown Canyon 1.3",
   "Supreme Isthmus": "Supreme Isthmus v2.1",
   "Tempest": "Tempest_V3",
+  "The Cold Place BAR": "The Cold Place BAR v1.1",
   "Tropical Assault": "Tropical Assault v3.0"
 };
 
@@ -194,5 +195,16 @@ window.LOBBY_CONFIGS = [
     image: "images/maps/C1015.png",
     map: "Eight Horses",
     commands: "!bset debugcommands floor 3\n!bset map_waterlevel -150"
+  },
+  {
+    id: "C1016",
+    title: "Cold Place",
+    variant: "TA-Style Flattened",
+    description: "TA-style flattened variant of Cold Place.",
+    creator: "26Projects",
+    categories: ["Inverted/Smoothed Maps"],
+    image: "images/maps/C1016.png",
+    map: "The Cold Place BAR",
+    commands: "!bset debugcommands flatten 90"
   }
 ];

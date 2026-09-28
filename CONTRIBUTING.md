@@ -50,6 +50,8 @@ Commit the edit to your fork.
 
 The filename is case-sensitive. `C1014.png` works; `c1014.PNG` does not.
 
+Before taking the screenshot, run `/cheat` and `/globallos` in BAR, then press `F5` to hide the UI so the full map is visible as clearly as possible.
+
 If the config includes custom starting areas, clearly label every starting location in the screenshot so players can understand the layout before copying it.
 
 ## 4. Open the pull request
