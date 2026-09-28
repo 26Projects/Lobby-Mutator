@@ -160,7 +160,10 @@ kbd { padding: 1px 7px; border: 1px solid var(--line); color: #71858b; backgroun
   max-width: 48%; margin-top: 4px; color: #6f878e; text-align: right; overflow-wrap: anywhere;
   font: 500 .65rem/1.45 var(--mono); letter-spacing: .035em;
 }
-.description { min-height: 50px; margin: 0 0 18px; color: var(--muted); font-size: .9rem; }
+.description { min-height: 50px; margin: 0 0 10px; color: var(--muted); font-size: .9rem; }
+.creator-line { margin: 0 0 18px; color: #70868c; font: 500 .7rem/1.4 var(--mono); letter-spacing: .025em; }
+.creator-line > span:first-child { color: #8fa3a8; text-transform: uppercase; }
+.creator-name { color: var(--cyan); }
 .command-block { overflow: auto; border: 1px solid rgba(151,194,204,.12); background: #061013; }
 .command-entry { padding: 14px 16px 16px; }
 .command-entry + .command-entry { border-top: 1px solid rgba(151,194,204,.12); }

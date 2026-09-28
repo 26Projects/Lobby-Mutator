@@ -184,7 +184,7 @@ function renderConfigs() {
   const visible = configs.filter((config) => {
     const configCategories = getConfigCategories(config);
     const matchesCategory = activeCategory === "All" || configCategories.includes(activeCategory);
-    const haystack = [config.id, config.title, config.variant, config.description, ...configCategories, config.map, getConfigCommands(config), config.commands].join(" ").toLowerCase();
+    const haystack = [config.id, config.title, config.variant, config.description, config.creator, ...configCategories, config.map, getConfigCommands(config), config.commands].join(" ").toLowerCase();
     return matchesCategory && haystack.includes(query);
   });
 
@@ -231,6 +231,7 @@ function renderConfigs() {
     }
     fragment.querySelector(".mod-id").textContent = `ID / ${config.id}`;
     fragment.querySelector(".description").textContent = config.description;
+    fragment.querySelector(".creator-name").textContent = config.creator || "";
     fragment.querySelector(".config-command").textContent = fullCommands || "Current map version unavailable. Connect once to refresh the BAR map list.";
     const resetButton = fragment.querySelector(".reset-button");
     resetButton.setAttribute("aria-label", "Copy commands to clear lobby map configuration");
