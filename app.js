@@ -261,8 +261,12 @@ function renderConfigs() {
       startBoxButton.addEventListener("click", () => copyCommand(startBoxButton, startBoxes, "Copy Start Boxes", "Start boxes copied to clipboard"));
     }
     const resetButton = fragment.querySelector(".reset-button");
-    resetButton.setAttribute("aria-label", "Copy commands to clear lobby map configuration");
-    resetButton.addEventListener("click", () => copyCommand(resetButton, clearLobbyCommands, "Clear Lobby", "Lobby reset commands copied"));
+    if (config.map) {
+      resetButton.setAttribute("aria-label", "Copy commands to clear lobby map configuration");
+      resetButton.addEventListener("click", () => copyCommand(resetButton, clearLobbyCommands, "Clear Lobby", "Map reset commands copied"));
+    } else {
+      resetButton.hidden = true;
+    }
     const configButton = fragment.querySelector(".config-button");
     configButton.setAttribute("aria-label", `Copy ${config.title}${config.variant ? ` ${config.variant}` : ""} config`);
     configButton.disabled = !fullCommands;

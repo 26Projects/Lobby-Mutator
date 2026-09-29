@@ -206,5 +206,15 @@ window.LOBBY_CONFIGS = [
     image: "images/maps/C1016.png",
     map: "The Cold Place BAR",
     commands: "!bset debugcommands flatten 90"
+  },
+  {
+    id: "T1001",
+    title: "Barrage",
+    variant: "Cluster Plasma Conversion",
+    description: "Replaces the napalm launcher with the Amputator's cluster plasma shell, scaled to Wolverine damage.",
+    creator: "26Projects",
+    categories: ["Tweaks"],
+    image: "images/tweaks/T1001.gif",
+    commands: "!bset tweakdefs bG9jYWwgdT1Vbml0RGVmcy5sZWdiYXI7bG9jYWwgcz1Vbml0RGVmcy5sZWdjbHVzdGVyO3Uud2VhcG9uZGVmcz17cGxhc21hPXRhYmxlLmNvcHkocy53ZWFwb25kZWZzLnBsYXNtYSksY2x1c3Rlcl9tdW5pdGlvbj10YWJsZS5jb3B5KHMud2VhcG9uZGVmcy5jbHVzdGVyX211bml0aW9uKX07bG9jYWwgcD11LndlYXBvbmRlZnMucGxhc21hO2xvY2FsIGM9dS53ZWFwb25kZWZzLmNsdXN0ZXJfbXVuaXRpb247cC5kYW1hZ2U9e2RlZmF1bHQ9MTEwLHN1YnM9MzAsdnRvbD0xMH07Yy5kYW1hZ2U9e2RlZmF1bHQ9MzgsbGJvYXRzPTM4LHN1YnM9OSx2dG9sPTR9O3Uud2VhcG9ucz17e2RlZj0iUExBU01BIixiYWR0YXJnZXRjYXRlZ29yeT0iVlRPTCIsb25seXRhcmdldGNhdGVnb3J5PSJTVVJGQUNFIn19"
   }
 ];
